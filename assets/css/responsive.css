@@ -1,0 +1,25 @@
+/*todo: CSS này sẽ thực thi khi kích thước màn hình <= 400px và ghi đè lên CSS đã có trước đó tùy vào mức độ ưu tiên */
+@media only screen and (max-width: 400px) {
+	:is(#band, #landscape) .row {
+		display: flex;
+		flex-direction: column;
+		width: 100vw;
+		margin: unset;
+	}
+	:is(#band, #landscape) .col-third {
+		width: 100%;
+	}
+
+	#content .content-section {
+		width: unset;
+	}
+	#nav li:nth-child(n + 2) {
+		display: none;
+	}
+	#content .about-text {
+		padding: 0 20px;
+	}
+	#contact {
+		padding: 64px 20px !important;
+	}
+}
