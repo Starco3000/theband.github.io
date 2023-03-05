@@ -75,9 +75,9 @@ html {
 
 
 /* Main */
-#main {
+/* #main {
 
-}
+} */
 
 #header {
     position: fixed;
@@ -90,6 +90,7 @@ html {
     display: block;
     background-color: #000;
     z-index: 1;  /*Khiến phần header nổi lên trên*/
+    /* overflow: hidden; Phần này giúp cho responsive mobile ẩn đi các thẻ li khi nó vượt quá thẻ header */
 }
 
 #nav {
@@ -119,7 +120,7 @@ html {
     text-decoration: none; /* bỏ gạch chân*/
     line-height: 46px;
     padding: 0 24px;
-    display: inline-block; /*Dòng này khiến cho khi hover vào sẽ đổi màu có chiều cao bằng với header*/
+    display: block; /*Dòng này khiến cho khi hover vào sẽ đổi màu có chiều cao bằng với header*/
 }
 
 /*Hiển thị subnav khi hover vào dựa trên quan hệ cha con*/
@@ -153,6 +154,14 @@ html {
     color:#fff;
 }
 
+#header .mobile-menu-btn {
+    position: absolute;
+    top:0;
+    right: 0;
+    display: none;
+}
+
+#header .mobile-menu-btn,
 #header .search-button {
     float: right;
     padding: 0 21px;
@@ -163,6 +172,14 @@ html {
     cursor: pointer;   /*Tao mo neo khi tro chuot vao se bien thanh hinh ban tay*/
 }
 
+#header .mobile-menu-btn:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+
+
+#header .menu-icon,
 #header .search-icon {
     color: #fff;
     line-height: 46px;
@@ -192,24 +209,28 @@ html {
 #slider .text-heading {
     font-weight: 500px;
     font-size: 24px;
+    text-shadow: 0 0 3px #000; 
 }
 
 #slider .text-description {
     font-size: 15px;
     margin-top: 25px;
+    text-shadow: 0 0 3px #000; 
 }   
 
 
-#content {
+/* #content {
 
-}
+} */
 
 #content .content-section {
     width: 800px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding: 64px 0 112px;
-    
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #content .section-heading {
@@ -307,7 +328,7 @@ html {
     /* overflow: hidden; */ /*Ôm trọn*/
     /* margin: 32px -8px 0;
     padding-bottom: 48px; */
-    margin-top: 32px;
+    margin-top: 16px;
 }
 
 /* .places-item {
@@ -354,6 +375,7 @@ html {
     padding: 11px 16px;
     margin-top: 15px;
     border: none;
+    text-align: center; /*Phần này áp dụng cho mobile, pc ko ảnh hưởng*/
 }
 
 .place-buy-btn:hover {
